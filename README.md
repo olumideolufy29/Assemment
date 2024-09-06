@@ -163,19 +163,19 @@ Result
 Result
 
 
-|             GEDIV|  PTDTRACE|count|
-+------------------+----------+-----+
-|    South Atlantic|White Only|16999|
-|          Mountain|White Only|14343|
-|           Pacific|White Only|13214|
-|East North Central|White Only|11325|
-|West South Central|White Only|11248|
-|West North Central|White Only| 9884|
-|   Middle Atlantic|White Only| 8487|
-|       New England|White Only| 8410|
-|East South Central|White Only| 6580|
-|    South Atlantic|Black Only| 4899|
-+------------------+----------+-----+
+| **Geographical Division** | **Race**      | **Count** |
+|---------------------------|---------------|-----------|
+| South Atlantic            | White Only     | 16,999    |
+| Mountain                  | White Only     | 14,343    |
+| Pacific                   | White Only     | 13,214    |
+| East North Central        | White Only     | 11,325    |
+| West South Central        | White Only     | 11,248    |
+| West North Central        | White Only     | 9,884     |
+| Middle Atlantic           | White Only     | 8,487     |
+| New England               | White Only     | 8,410     |
+| East South Central        | White Only     | 6,580     |
+| South Atlantic            | Black Only     | 4,899     |
+
 
 3. **Telephone Access Analysis**:
 - Result
