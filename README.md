@@ -188,11 +188,11 @@ Number of responders without telephone at home but can access telephone elsewher
         (col("HEPHONEO") == "1")
     ).count()
     print(f"Number of responders without telephone at home but can access telephone elsewhere and accept telephone      interview: {telephone_access_counts}")
- ```
+    ```
 
 
 4.
-  python```
+  ```python
     telephone_no_interview_counts = df.filter(
         (col("HETELHHD") == "1") & 
         (col("HEPHONEO") == "2")
@@ -220,6 +220,7 @@ start jupyter lab/not3ebook
 ```bash
 jupyter lab
 ```
+
 
 
 ---
