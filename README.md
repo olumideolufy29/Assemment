@@ -123,25 +123,25 @@ def Mapper(df: pyspark.sql.DataFrame, column_name: str, dict_mapper: dict):
     ```
 
 Result
-| **Income Range**         | **Count** |
-|--------------------------|-----------|
-| Others                   | 20,391    |
-| $100,000 - $149,999      | 17,794    |
-| $75,000 - $99,999        | 16,557    |
-| $150,000 or more         | 15,704    |
-| $60,000 - $74,999        | 13,442    |
-| $50,000 - $59,999        | 9,971     |
-| $40,000 - $49,999        | 9,788     |
-| $30,000 - $34,999        | 6,743     |
-| $35,000 - $39,999        | 6,620     |
-| $20,000 - $24,999        | 6,312     |
-| $25,000 - $29,999        | 5,803     |
-| $15,000 - $19,999        | 4,518     |
-| $10,000 - $12,499        | 3,161     |
-| Less $5,000              | 3,136     |
-| $12,500 - $14,999        | 2,614     |
-| $7,500 - $9,999          | 2,277     |
-| $5,000 - $7,499          | 1,625     |
+| Household Income Range | Count  |
+|------------------------|--------|
+| Others                 | 250,020|
+| $100,000 - $149,999    | 214,328|
+| $75,000 - $99,999      | 194,544|
+| $150,000 or more       | 185,309|
+| $60,000 - $74,999      | 166,538|
+| $50,000 - $59,999      | 124,380|
+| $40,000 - $49,999      | 121,333|
+| $30,000 - $34,999      | 85,939 |
+| $35,000 - $39,999      | 80,927 |
+| $20,000 - $24,999      | 73,960 |
+| $25,000 - $29,999      | 71,741 |
+| $15,000 - $19,999      | 57,047 |
+| Less than $5,000       | 36,408 |
+| $10,000 - $12,499      | 36,190 |
+| $12,500 - $14,999      | 33,342 |
+| $7,500 - $9,999        | 28,415 |
+| $5,000 - $7,499        | 19,806 |
 
 
 
@@ -163,23 +163,23 @@ Result
 Result
 
 
-| **Geographical Division** | **Race**      | **Count** |
-|---------------------------|---------------|-----------|
-| South Atlantic            | White Only     | 16,999    |
-| Mountain                  | White Only     | 14,343    |
-| Pacific                   | White Only     | 13,214    |
-| East North Central        | White Only     | 11,325    |
-| West South Central        | White Only     | 11,248    |
-| West North Central        | White Only     | 9,884     |
-| Middle Atlantic           | White Only     | 8,487     |
-| New England               | White Only     | 8,410     |
-| East South Central        | White Only     | 6,580     |
-| South Atlantic            | Black Only     | 4,899     |
+| Region            | Race      | Count  |
+|-------------------|-----------|--------|
+| South Atlantic    | White Only| 205,956|
+| Mountain          | White Only| 171,708|
+| Pacific           | White Only| 159,318|
+| East North Central| White Only| 138,009|
+| West South Central| White Only| 136,677|
+| West North Central| White Only| 122,583|
+| Middle Atlantic   | White Only| 104,564|
+| New England       | White Only| 101,893|
+| East South Central| White Only|  82,411|
+| South Atlantic    | Black Only|  57,370|
 
 
 3. **Telephone Access Analysis**:
 - Result
-Number of responders without telephone at home but can access telephone elsewhere and accept telephone interview: 633
+Number of responders without telephone at home but can access telephone elsewhere and accept telephone interview: **6725**
 
     ```python
     telephone_access_counts = df.filter(
@@ -187,8 +187,10 @@ Number of responders without telephone at home but can access telephone elsewher
         (col("HETELAVL") == "1") & 
         (col("HEPHONEO") == "1")
     ).count()
-    print(f"Number of responders without telephone at home but can access telephone elsewhere and accept telephone      interview: {telephone_access_counts}")
+    Number of responders without telephone at home but can access telephone elsewhere and accept telephone interview: 6725
+
     ```
+Number of responders without telephone at home but can access telephone elsewhere and accept telephone interview: **6725**
 
 
 4.
@@ -201,10 +203,10 @@ Number of responders without telephone at home but can access telephone elsewher
     ```
 Result
 
-Number of responders who can access a telephone but telephone interview is not accepted: 0
 
 
     - **Operation**: Counts and prints the number of responders with no home telephone but access to one elsewhere who accept telephone interviews, and those who have a home telephone but do not accept telephone interviews.
+Number of responders who can access a telephone but telephone interview is not accepted: 0
 
 ## How to Run
 
