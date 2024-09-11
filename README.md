@@ -113,6 +113,7 @@ def Mapper(df: pyspark.sql.DataFrame, column_name: str, dict_mapper: dict):
     ```
 
 1. **Income Mapping and Analysis**:
+    - **Operation**: Maps income ranges using `income_range_mapping`, groups by income range, counts occurrences, and displays results.
 
     ```python
     column_name = 'HEFAMINC'
@@ -145,9 +146,10 @@ Result
 
 
 
-    - **Operation**: Maps income ranges using `income_range_mapping`, groups by income range, counts occurrences, and displays results.
 
 2. **Division and Race Mapping**:
+   
+    - **Operation**: Maps division and race codes, groups by division and race, and displays the top counts.
 
     ```python
     division_race_columns = {"GEDIV": division_mapping, "PTDTRACE": race_mapping}
@@ -157,8 +159,6 @@ Result
     division_race_counts = Mapper(division_race_counts, "GEDIV", division_mapping)
     division_race_counts.orderBy("count", ascending=False).show(10)
     ```
-
-    - **Operation**: Maps division and race codes, groups by division and race, and displays the top counts.
 
 Result
 
@@ -178,22 +178,22 @@ Result
 
 
 3. **Telephone Access Analysis**:
-- Result
-Number of responders without telephone at home but can access telephone elsewhere and accept telephone interview: **6725**
-
+ 
     ```python
     telephone_access_counts = df.filter(
         (col("HETELHHD") == "2") & 
         (col("HETELAVL") == "1") & 
         (col("HEPHONEO") == "1")
     ).count()
-    Number of responders without telephone at home but can access telephone elsewhere and accept telephone interview: 6725
-
     ```
-Number of responders without telephone at home but can access telephone elsewhere and accept telephone interview: **6725**
+    
+   - Result
+    Number of responders without telephone at home but can access telephone elsewhere and accept telephone interview: **6725**
 
 
 4.
+   - **Operation**: Counts and prints the number of responders with no home telephone but access to one elsewhere who accept telephone interviews, and those who have a home telephone but do not accept telephone      interviews.
+     
   ```python
     telephone_no_interview_counts = df.filter(
         (col("HETELHHD") == "1") & 
@@ -201,12 +201,10 @@ Number of responders without telephone at home but can access telephone elsewher
     ).count()
     print(f"Number of responders who can access a telephone but telephone interview is not accepted: {telephone_no_interview_counts}")
     ```
-Result
 
-
-
-    - **Operation**: Counts and prints the number of responders with no home telephone but access to one elsewhere who accept telephone interviews, and those who have a home telephone but do not accept telephone interviews.
-Number of responders who can access a telephone but telephone interview is not accepted: 0
+  - Result
+  
+  Number of responders who can access a telephone but telephone interview is not accepted: 0
 
 ## How to Run
 
